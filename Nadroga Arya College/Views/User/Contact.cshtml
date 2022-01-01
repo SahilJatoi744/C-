@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+<br />
+<br />
+<hr />
+<center><h2>Contact</h2></center>
+<hr />
+<br />
+<br />
+
+<html>
+<head>
+
+
+
+    @*<script src="usargiepolicarpio.js" type="text/javascript" charset="utf-8"></script>
+    *@
+    <script src="~/UserLibrary/js1/application.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/UserLibrary/lib/jquery.js" type="text/javascript"></script>
+    <link href="~/UserLibrary/src/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="~/UserLibrary/src/facebox.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="~/UserLibrary/js/ie6_script_other.js"></script>
+    <script type="text/javascript" src="~/UserLibrary/js/html5.js"></script>
+
+    <style type="text/css">
+        table tr td {
+            border: 0px solid black;
+            padding: 5px;
+        }
+
+        fieldset {
+            border: 1px solid black;
+            padding: 10px;
+            color: black;
+        }
+    </style>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('a[rel*=facebox]').facebox({
+                loadingImage: 'src/loading.gif',
+                closeImage: 'src/closelabel.png'
+            })
+        })
+    </script>
+</head>
+<body>
+    <span style="font-size:16px;">
+        <fieldset>
+            <legend><b style="font-size:18px">Our Contacts are as follows</b></legend>
+            <table border="0px" width="600px;" cellpadding="0px" cellspacing="0px">
+                <tr><td width="170px"><b>Contact Address:</b></td><td>SABETO College, Nadi.</td></tr>
+                <tr><td colspan="2"><hr /></td></tr>
+                <tr><td width="170px"><b>E-mail Address:</b></td><td> sabetocollege@gmail.com</td></tr>
+                <tr><td colspan="2"><hr /></td></tr>
+                <tr><td width="170px"><b>Phone Number:</b></td><td>9878453</td></tr>
+
+            </table>
+        </fieldset>
+
+
+    </span>
+</body>
+</html>

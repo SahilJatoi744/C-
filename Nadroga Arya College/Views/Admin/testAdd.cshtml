@@ -1,0 +1,109 @@
+﻿@model Nadroga_Arya_College.Models.mst_test
+@{
+    ViewBag.Title = "testAdd";
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Administrative Page</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="~/AdminLibrary/default.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        table tr td a {
+            text-decoration: none;
+        }
+
+            table tr td a:hover {
+                text-decoration: underline;
+                color: blue;
+            }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">
+            <h1><a href="#" style="font-family:impact; font-size:27px;">2021/2022 Exam</a></h1>
+            <h2><a href="#" style="font-size:13px;">Nadroga Arya COLLEGE</a></h2>
+        </div>
+        <div id="menu">
+            <ul>
+                <li class="first"><a style="font-size:15px; color:blue;" href="@Url.Action("Index","Admin")" title=""><---Back</a></li>
+            </ul>
+        </div>
+        <div id="ad468x60"><a href="#"><img src="~/AdminLibrary/images/ad468x60.jpg" alt="" width="468" height="60" /></a></div>
+    </div>
+    <div id="page">
+        <div id="content">
+            <div class="boxed" style="font-size:20px;">
+                <h1 class="heading" style="font-size:18px;">Welcome...You are....<span style="color:red;">Admin</span></h1>
+                <div style="margin:auto;width:95%;height:200px;box-shadow:3px 3px 3px 5px #CCCCCC;text-align:left; padding:10px; margin-top:10px;">
+
+
+                    <h4><div class=head1><center>Add Secondary Level</center></div></h4>
+                    @using (Html.BeginForm("subAdd", "Admin", FormMethod.Post))
+                    {
+                        <form name="form1" method="post" onSubmit="return check();">
+                            <table width="90%" border="0" align="center">
+
+                                <tr>
+                                    <label>Enter Exam title Id</label>
+                                        @Html.TextBoxFor(a => a.test_id, new { type = "Text", placeholder = "Test Id", required = "required" })<br />
+                                <label>Enter Test Name</label>
+                                    @Html.TextBoxFor(a => a.test_name, new { type = "Text", placeholder = "Test Name", required = "required" })<br />
+                                <label>Enter Total Question</label>
+                                        @Html.TextBoxFor(a => a.total_que, new { type = "Text", placeholder = "Total Question", required = "required" }) <br /> 
+                                    <input style="width:100px; height:30px;" type="submit" name="submit" value="Add">
+                                </tr>
+                                
+                            </table>
+                        </form>
+                    }
+                        <p>&nbsp; </p>
+                    </div>
+
+
+
+
+            </div>
+        </div>
+        <!-- end #content -->
+        <div id="sidebar">
+            <div class="boxed">
+                <h2 class="heading" style="font-size:15px;">ADMINISTRATIVE SECTION</h2>
+                <div class="content" style="font-size:18px;">
+                    You are...<span style="color:black; font-weight:bold;">Admin</span>
+                </div>
+            </div>
+        </div>
+        <!-- end #sidebar -->
+    </div>
+    <!-- end #page -->
+    <div style="clear: both;">&nbsp;</div>
+    <div id="footer">
+        <p id="legal" style="font-size:16px;">Copyright &copy;Nadroga Arya COLLEGE</p>
+        <p id="links" style="font-size:16px;"><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </div>
+    <SCRIPT LANGUAGE="JavaScript">
+        function check() {
+            mt = document.form1.testname.value;
+            if (mt.length < 1) {
+                alert("Please Enter Test Name");
+                document.form1.testname.focus();
+                return false;
+            }
+            tt = document.form1.totque.value;
+            if (tt.length < 1) {
+                alert("Please Enter Total Question");
+                document.form1.totque.value;
+                return false;
+            }
+            return true;
+        }
+    </SCRIPT>
+
+</body>
+</html>

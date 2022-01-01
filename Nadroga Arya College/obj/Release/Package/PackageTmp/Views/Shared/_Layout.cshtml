@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @Html.ActionLink(" ", "Index", "User", new { area = "" })
+    @RenderBody()
+</body>
+</html>
+
+
+@*for web.config
+    
+    data source=DESKTOP-T6OHQ9N\SQLEXPRESS;initial catalog=NADROGA_ARYA_COLLEGE;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework*@

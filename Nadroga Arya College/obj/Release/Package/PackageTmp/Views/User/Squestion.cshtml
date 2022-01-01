@@ -1,0 +1,50 @@
+﻿@model Nadroga_Arya_College.Models.suggest
+@{
+    ViewBag.Title = "Squestion";
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Questions Suggestion for all Department</title>
+    <style type="text/css">
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: #999999;
+            }
+    </style>
+</head>
+
+<body style=" background-color: black; color:white; font-family:tahoma;">
+    <span style="color:red;"><--------</span> <a href="@Url.Action("Index","User")">Back to Homepage</a>
+    <div style="margin-top:70px;">
+        <center>
+            <fieldset style="width:500px">
+                <legend>Enable / Disable to take Online Exam</legend>
+                @using (Html.BeginForm("Squestion", "User", FormMethod.Post)) { 
+                    <form method="post" action="squestion.php">
+                        <span style="color:black; text-shadow:2px 2px 1px white;">Department (Class)</span>&nbsp;&nbsp;<span style="color:red; font-size:11px;"></span><hr /><select name="department" style="width:200px;"required>
+                            <option> </option>
+                            <option value="science">Science Class</option>
+                            <option value="art">Art Class</option>
+                            <option value="commercial">Commercial Class</option>
+                        </select>
+                        <br /><br /><span style="color:black; text-shadow:2px 2px 1px white;">Suggest Your Question(s)	</span>
+                        <br /><b style="color:red;">Please Note:</b><br /> Kindly include ANSWERS to your QUESTIONS inside this same textarea. Thanks for participating in questions suggestion <span style="color:red; font-size:11px;"></span><hr />
+                @Html.TextAreaFor(a => a.Question, new {required = "required" })<hr />
+                <input type="submit" name="submit" value="Submit Question" />
+            </form>
+                }
+            </fieldset><br />
+            <div style="width:450px; margin:auto">
+                <span style="color:red;">Please Note:</span><hr /><span style="font-size:14px">Suggestion of Questions are not limited to some people; all users and viewers of this Website have the right to suggest Questions for any of the Classes. Please take note that the Questions suggested may not be used for the Screening Test and if part of the questions are to be used, such questions must have passed through lots of testing and turning. So please, make sure you read well in order to pass well. Thanks....Management</span>
+            </div>
+        </center>
+    </div>
+</body>
+</html>

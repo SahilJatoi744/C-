@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NADROGA_ARYA_COLLEGEModelStoreContainer" CdmEntityContainer="NADROGA_ARYA_COLLEGEEntities">
+    <EntitySetMapping Name="adminlogins">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.adminlogin">
+        <MappingFragment StoreEntitySet="adminlogin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logins">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.login">
+        <MappingFragment StoreEntitySet="login">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="regno" ColumnName="regno" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mst_question">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.mst_question">
+        <MappingFragment StoreEntitySet="mst_question">
+          <ScalarProperty Name="que_id" ColumnName="que_id" />
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+          <ScalarProperty Name="que_desc" ColumnName="que_desc" />
+          <ScalarProperty Name="ans1" ColumnName="ans1" />
+          <ScalarProperty Name="ans2" ColumnName="ans2" />
+          <ScalarProperty Name="ans3" ColumnName="ans3" />
+          <ScalarProperty Name="ans4" ColumnName="ans4" />
+          <ScalarProperty Name="true_ans" ColumnName="true_ans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mst_subject">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.mst_subject">
+        <MappingFragment StoreEntitySet="mst_subject">
+          <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+          <ScalarProperty Name="sub_name" ColumnName="sub_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mst_test">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.mst_test">
+        <MappingFragment StoreEntitySet="mst_test">
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+          <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+          <ScalarProperty Name="test_name" ColumnName="test_name" />
+          <ScalarProperty Name="total_que" ColumnName="total_que" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mst_user">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.mst_user">
+        <MappingFragment StoreEntitySet="mst_user">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="news">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.new">
+        <MappingFragment StoreEntitySet="new">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="quote" ColumnName="quote" />
+          <ScalarProperty Name="by_" ColumnName="by_" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pintests">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.pintest">
+        <MappingFragment StoreEntitySet="pintest">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="questions">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.question">
+        <MappingFragment StoreEntitySet="question">
+          <ScalarProperty Name="que_id" ColumnName="que_id" />
+          <ScalarProperty Name="test_id" ColumnName="test_id" />
+          <ScalarProperty Name="que_desc" ColumnName="que_desc" />
+          <ScalarProperty Name="studentid" ColumnName="studentid" />
+          <ScalarProperty Name="ans1" ColumnName="ans1" />
+          <ScalarProperty Name="ans2" ColumnName="ans2" />
+          <ScalarProperty Name="ans3" ColumnName="ans3" />
+          <ScalarProperty Name="ans4" ColumnName="ans4" />
+          <ScalarProperty Name="true_ans" ColumnName="true_ans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="regcodes">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.regcode">
+        <MappingFragment StoreEntitySet="regcode">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="studentregs">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.studentreg">
+        <MappingFragment StoreEntitySet="studentreg">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="othernames" ColumnName="othernames" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="religion" ColumnName="religion" />
+          <ScalarProperty Name="bday" ColumnName="bday" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="LGA" ColumnName="LGA" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="school" ColumnName="school" />
+          <ScalarProperty Name="faculty" ColumnName="faculty" />
+          <ScalarProperty Name="course" ColumnName="course" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="jamb" ColumnName="jamb" />
+          <ScalarProperty Name="sub1" ColumnName="sub1" />
+          <ScalarProperty Name="grade1" ColumnName="grade1" />
+          <ScalarProperty Name="sub2" ColumnName="sub2" />
+          <ScalarProperty Name="grade2" ColumnName="grade2" />
+          <ScalarProperty Name="sub3" ColumnName="sub3" />
+          <ScalarProperty Name="grade3" ColumnName="grade3" />
+          <ScalarProperty Name="sub4" ColumnName="sub4" />
+          <ScalarProperty Name="grade4" ColumnName="grade4" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="appno" ColumnName="appno" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="examdate" ColumnName="examdate" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="timers">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.timer">
+        <MappingFragment StoreEntitySet="timer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="studentid" ColumnName="studentid" />
+          <ScalarProperty Name="timer1" ColumnName="timer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="suggests">
+      <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.suggest">
+        <MappingFragment StoreEntitySet="suggest">
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

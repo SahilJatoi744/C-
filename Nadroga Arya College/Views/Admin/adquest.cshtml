@@ -1,0 +1,128 @@
+﻿@model List<Nadroga_Arya_College.Models.question>
+@{
+    ViewBag.Title = "adquest";
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Administrative Page</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="~/AdminLibrary/default.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+    <style type="text/css">
+        table tr td a {
+            text-decoration: none;
+        }
+
+            table tr td a:hover {
+                text-decoration: underline;
+                color: blue;
+            }
+
+        table {
+            border-collapse: collapse;
+            color: black;
+        }
+
+            table tr td {
+                padding: 5px;
+            }
+
+            table tr.ntr {
+                background-color: #000000;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">
+            <h1><a href="#" style="font-family:impact; font-size:27px;">2021/2022 EXAM</a></h1>
+            <h2><a href="#" style="font-size:13px;">Nadroga Arya COLLEGE</a></h2>
+        </div>
+        <div id="menu">
+            <ul>
+                <li class="first"><a style="font-size:15px; color:red;" href="@Url.Action("Index","Admin")" title=""><----Back</a></li>
+            </ul>
+        </div>
+        <div id="ad468x60"><a href="#"><img src="~/AdminLibrary/images/ad468x60.jpg" alt="" width="468" height="60" /></a></div>
+    </div>
+    <div id="page">
+        <div id="content">
+            <div class="boxed" style="font-size:20px;">
+                <h1 class="heading" style="font-size:18px;">
+                    Welcome...You are....<span style="color:red;">Admin</span>
+
+                </h1>
+
+
+
+                <div style="margin:auto;width:auto;height:auto;box-shadow:3px 3px 3px 5px #CCCCCC;text-align:left;  margin-top:10px;">
+
+                    <div style="padding:10px; font-size:11px; ">
+
+                        <br />
+                        <center><h2>QUESTIONS IN THE DATABASE</h2></center>
+                        <br /><br />
+
+                              <table class="table table-bordered">
+                                  <tr>
+                                      <th>Question Description</th>
+                                      <th>Answer 1</th>
+                                      <th>Answer 2</th>
+                                      <th>Answer 3</th>
+                                      <th>Answer 4</th>
+                                      <th>True Answer</th>
+                                      <th>Action</th>
+                                  </tr>
+                                  @foreach (var item in Model)
+                                  {
+                              <tr>
+                                  <td>@item.que_desc</td>
+                                  <td>@item.ans1</td>
+                                  <td>@item.ans2</td>
+                                  <td>@item.ans3</td>
+                                  <td>@item.ans4</td>
+                                  <td>@item.true_ans</td>
+                                  <td><a class="btn btn-danger" href="@Url.Action("DeleteQ","Admin", new {id=@item.que_id })"><i class='fas fa-trash'></i></a></td>
+                              </tr>
+                                  }
+
+                              </table>
+
+                                
+                            <p align="center" class="head1">&nbsp;</p>
+                        </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+        <!-- end #content -->
+        <div id="sidebar">
+            <div class="boxed">
+                <h2 class="heading" style="font-size:15px;">ADMINISTRATIVE SECTION</h2>
+                <div class="content" style="font-size:18px;">
+                    You are...<span style="color:black; font-weight:bold;">Admin</span><br /><br />
+                    <div class="cbttest"><a style="color:#003399" href="@Url.Action("questionAdd","Admin")">Set CBT Questions</a></div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end #sidebar -->
+    </div>
+    <!-- end #page -->
+    <div style="clear: both;">&nbsp;</div>
+    <div id="footer">
+        <p id="legal" style="font-size:16px;">Copyright &copy;Nadroga Arya COLLEGE EXAM</p>
+        <p id="links" style="font-size:16px;"><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </div>
+</body>
+</html>

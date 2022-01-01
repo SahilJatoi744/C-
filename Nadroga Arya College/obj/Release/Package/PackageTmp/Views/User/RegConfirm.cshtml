@@ -1,0 +1,434 @@
+﻿@model Nadroga_Arya_College.Models.studentreg
+@{
+    ViewBag.Title = "RegConfirm";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Registration Portal</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/UserLibrary/css1/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/UserLibrary/css1/layout.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/UserLibrary/css1/style.css" type="text/css" media="all">
+    <style type="text/css">
+        table tr td {
+            border-top: 1px dashed #999999;
+            border-bottom: 1px dashed #999999;
+            padding: 10px;
+            color: black;
+            font-size: 18px;
+        }
+
+        input {
+            width: 360px;
+            border: 1px solid #CCCCCC;
+            padding: 4px;
+            height: 20px;
+        }
+
+            input:hover {
+                width: 360px;
+                border: 1px solid #0066FF;
+                padding: 4px;
+                height: 20px;
+            }
+
+        select {
+            width: 130px;
+            border: 1px solid #CCCCCC;
+            padding: 4px;
+            height: 35px;
+        }
+
+        .loc select {
+            width: 170px;
+            border: 1px solid #CCCCCC;
+            padding: 4px;
+            height: 35px;
+        }
+
+        .loc1 select {
+            width: 120px;
+        }
+
+        .loc2 select {
+            width: 73px;
+        }
+
+        .loca select {
+            width: 250px;
+        }
+
+        .loca1 select {
+            width: 80px;
+        }
+
+        .subm input:hover {
+            box-shadow: none;
+        }
+
+        .reco select {
+            width: 330px;
+        }
+    </style>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/ie6_script_other.js"></script>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <![endif]-->
+</head>
+<body id="page1">
+    <!-- START PAGE SOURCE -->
+    <div class="body3"></div>
+    <div class="body1">
+        <div class="main">
+            <header>
+                <div id="logo_box">
+                    <h1><a href="#" id="logo">FIJI SCHOOL <span>Entrance Examination Portal</span></a></h1>
+                </div>
+                <nav>
+                    <ul id="menu">
+                        <li id="menu_active"><a href="@Url.Action("Index","User")">Home</a></li>
+                    </ul>
+                </nav>
+                <div class="wrapper">
+                    <div class="text1">FIJI Examination</div>
+                    <div class="text2">2021/2022 Admission </div>
+
+                </div>
+            </header>
+        </div>
+    </div>
+    <div class="body2">
+        <div class="main">
+            <section id="content">
+                <div class="marg_top wrapper">
+
+
+                </div>
+                <div class="wrapper marg_top2">
+
+                    <article class="col2 pad_left1">
+                        <div class="pad">
+                            <h2>Student Registration</h2>
+                            <div style="font-size:20px;">
+                                <table border="1px" width="100%">
+                                    <tr>
+                                        @using (Html.BeginForm("RegConfirm", "User", FormMethod.Post))
+                                        {
+
+                                            <label>Surname</label>
+                                            @Html.TextBoxFor(a => a.surname, new { type = "text", placeholder = "Surname", required = "required" })
+                                            <br />
+                                            <br />
+                                            <label>Other Names</label>
+                                            @Html.TextBoxFor(a => a.othernames, new { type = "text", placeholder = "Other Names", required = "required" })
+                                            <br />
+                                            <br />
+                                            <label>Address</label>
+                                            @Html.TextBoxFor(a => a.address, new { type = "text", placeholder = "Address", required = "required" })
+                                            <br />
+                                            <br />
+                                            <label>Phone</label>
+                                            @Html.TextBoxFor(a => a.phone, new { type = "number", placeholder = "Phone Number", required = "required" })
+                                            <br />
+                                            <br />
+                                            <label>Email</label>
+                                            @Html.TextBoxFor(a => a.email, new { type = "email", placeholder = "Email", required = "required" })
+                                            <br />
+                                            <br />
+                                              <tr>
+                                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                    <td width="10px">
+                                                        <select name="gender" required>
+                                                            <option selected="selected"></option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+
+                                                        <select name="religion" required>
+                                                            <option selected="selected" required></option>
+                                                            <option value="Christian">Christian</option>
+                                                            <option value="Muslim">Muslim</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                                    <td>
+
+
+
+                                                        <select name="state" required>
+                                                            <option selected="selected" required> </option>
+                                                            <option value="Ondo State">STATE 1</option>
+                                                            <option value="Ekiti State">STATE 2</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <div class="loc">
+                                                            <select name="local" required>
+                                                                <option selected="selected" required></option>
+                                                                <option value="Akure South Local Government">Akure South Local Government</option>
+                                                                <option value="Akure North Local Government">Akure North Local Government</option>
+                                                            </select>
+                                                    </td>
+                                                </tr>
+                                
+
+
+                                <tr>
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td>
+
+                                        <div class="loc1">
+                                            <select name="nationality" required>
+                                                <option selected="selected" required></option>
+                                                <option value="Nigeria">United State of America</option>
+                                                <option value="Canada">Canada</option>
+                                            </select>
+                                        </div>
+
+                                    </td>
+                                    <td>
+
+                                        <div class="bday"><input style="width:150px" type="text" name="bday" value="@Session["Birthday"]" required></div>
+
+                                    </td>
+                                </tr>
+
+                                <table border="1px" width="100%">
+                                    <tr><td colspan="2" style="background-color:#E8E8E8"><b>Course of Choice</b></td></tr>
+                                    <tr>
+                                        <td width="150px">School</td>
+                                        <td>
+                                            <div class="reco">
+                                                <select name="school" required>
+                                                    <option selected="selected"></option>
+                                                    <option value="Rufus Giwa Polytechnic, Owo">Rufus Giwa Polytechnic, Owo</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Faculty</td>
+                                        <td>
+                                            <div class="reco">
+                                                <select name="faculty" required>
+                                                    <option selected="selected" required></option>
+                                                    <option value="Faculty of Applied Science">Faculty of Applied Science</option>
+                                                    <option value="Faculty of Applied Science">Faculty of Communication and General Studies</option>
+                                                    <option value="Faculty of Applied Science">Faculty of Engineering Technology</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="150px">Course</td>
+                                        <td>
+                                            <div class="reco">
+                                                <select name="course" required>
+                                                    <option selected="selected" required></option>
+                                                    <option value="Computer Engineering">Computer Engineering</option>
+                                                    <option value="Computer Science">Computer Science</option>
+                                                    <option value="Mass Coomunication">Mass Coomunication</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                                <table border="1px" width="100%">
+                                    <tr><td colspan="3" style="background-color:#E8E8E8"><b>Jamb (UTM) Details</b></td></tr>
+                                    <tr>
+                                        <td width="150px">Secondary School Class</td>
+                                        <td colspan="2">
+                                            <select name="level" required>
+                                                <option selected="selected" required></option>
+                                                <option value="Science Class">Science Class</option>
+                                                <option value="Commercial Class">Commercial Class</option>
+                                                <option value="Art Class">Art Class</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr><td>Jamb Number</td><td colspan="2"><input type="text" name="jamb" value="@Session["jamb"]" required></td></tr>
+                                    <tr>
+                                        <td rowspan="4"><br><br><br><br>Jamb Subjects</td>
+                                        <td>
+                                            <div class="loca">
+                                                <select name="sub1" required>
+                                                    <option selected="selected" required></option>
+                                                    <option value="English Language">English Language</option>
+                                                    <option value="Mathematics">Mathematics</option>
+                                                    <option value="Economics">Economics</option>
+                                                    <option value="Biology">Biology</option>
+                                                    <option value="Civic Education">Civic Education</option>
+                                                    <option value="Agricultural Science">Agricultural Science</option>
+                                                    <option value="Computer Studies">Computer Studies</option>
+                                                    <option value="Geography">Geography</option>
+                                                    <option value="Lit-in-English">Lit-in-English</option>
+                                                    <option value="Government">Government</option>
+                                                    <option value="Christian Religion Studies">Christian Religion Studies</option>
+                                                    <option value="Islamic Religion Studies">Islamic Religion Studies</option>
+                                                    <option value="Commerce">Commerce</option>
+                                                    <option value="Financial Accounting">Financial Accounting</option>
+                                                    <option value="Physics">Physics</option>
+                                                    <option value="Chemistry">Chemistry</option>
+                                                    <option value="Further Mathematics">Further Mathematics</option>
+                                                    <option value="Yoruba">Yoruba</option>
+
+
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input style="width:70px" type="text" name="grade1" value="@Session["grade1"]" required>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="loca">
+                                                <select name="sub2" required>
+                                                    <option selected="selected" required></option>
+                                                    <option value="English Language">English Language</option>
+                                                    <option value="Mathematics">Mathematics</option>
+                                                    <option value="Economics">Economics</option>
+                                                    <option value="Biology">Biology</option>
+                                                    <option value="Civic Education">Civic Education</option>
+                                                    <option value="Agricultural Science">Agricultural Science</option>
+                                                    <option value="Computer Studies">Computer Studies</option>
+                                                    <option value="Geography">Geography</option>
+                                                    <option value="Lit-in-English">Lit-in-English</option>
+                                                    <option value="Government">Government</option>
+                                                    <option value="Christian Religion Studies">Christian Religion Studies</option>
+                                                    <option value="Islamic Religion Studies">Islamic Religion Studies</option>
+                                                    <option value="Commerce">Commerce</option>
+                                                    <option value="Financial Accounting">Financial Accounting</option>
+                                                    <option value="Physics">Physics</option>
+                                                    <option value="Chemistry">Chemistry</option>
+                                                    <option value="Further Mathematics">Further Mathematics</option>
+                                                    <option value="Yoruba">Yoruba</option>
+
+
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input style="width:70px" type="text" name="grade2" value="@Session["grade2"]" required>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="loca">
+                                                <select name="sub3" required>
+                                                    <option selected="selected" required></option>
+                                                    <option value="English Language">English Language</option>
+                                                    <option value="Mathematics">Mathematics</option>
+                                                    <option value="Economics">Economics</option>
+                                                    <option value="Biology">Biology</option>
+                                                    <option value="Civic Education">Civic Education</option>
+                                                    <option value="Agricultural Science">Agricultural Science</option>
+                                                    <option value="Computer Studies">Computer Studies</option>
+                                                    <option value="Geography">Geography</option>
+                                                    <option value="Lit-in-English">Lit-in-English</option>
+                                                    <option value="Government">Government</option>
+                                                    <option value="Christian Religion Studies">Christian Religion Studies</option>
+                                                    <option value="Islamic Religion Studies">Islamic Religion Studies</option>
+                                                    <option value="Commerce">Commerce</option>
+                                                    <option value="Financial Accounting">Financial Accounting</option>
+                                                    <option value="Physics">Physics</option>
+                                                    <option value="Chemistry">Chemistry</option>
+                                                    <option value="Further Mathematics">Further Mathematics</option>
+                                                    <option value="Yoruba">Yoruba</option>
+
+
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input style="width:70px" type="text" name="grade3" value="@Session["grade3"]" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="loca">
+                                                <select name="sub4" required>
+                                                    <option selected="selected" required></option>
+                                                    <option value="English Language">English Language</option>
+                                                    <option value="Mathematics">Mathematics</option>
+                                                    <option value="Economics">Economics</option>
+                                                    <option value="Biology">Biology</option>
+                                                    <option value="Civic Education">Civic Education</option>
+                                                    <option value="Agricultural Science">Agricultural Science</option>
+                                                    <option value="Computer Studies">Computer Studies</option>
+                                                    <option value="Geography">Geography</option>
+                                                    <option value="Lit-in-English">Lit-in-English</option>
+                                                    <option value="Government">Government</option>
+                                                    <option value="Christian Religion Studies">Christian Religion Studies</option>
+                                                    <option value="Islamic Religion Studies">Islamic Religion Studies</option>
+                                                    <option value="Commerce">Commerce</option>
+                                                    <option value="Financial Accounting">Financial Accounting</option>
+                                                    <option value="Physics">Physics</option>
+                                                    <option value="Chemistry">Chemistry</option>
+                                                    <option value="Further Mathematics">Further Mathematics</option>
+                                                    <option value="Yoruba">Yoruba</option>
+
+
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input style="width:70px" type="text" name="grade4" value="@Session["grade4"]" required>
+                                        </td>
+
+                                    </tr>
+                                </table>
+
+                                <table border="1px" width="100%">
+                                    <tr><td colspan="3" style="background-color:#E8E8E8"><b>Upload Passport Photograph</b></td></tr>
+
+                                    <tr><td>&nbsp;</td><td colspan="3"><input style="height:35px;" type="file" name="photo" required></td></tr>
+
+
+                                    <tr><td>&nbsp;</td><td colspan="3"><div class="subm"><input style="font-size:18px; height:45px; font-weight:bold; color:#0033FF" type="submit" style="height:50px" name="submit1" value="Save / Submit Form"></div></td></tr>
+
+                                </table>
+                            }
+                                        </tr>
+
+                                    </div>
+
+                                    <div class="main">
+                                    </div>
+                            </div>
+                    </div>
+                </div>
+
+            </body>
+
+            <footer>
+                <div class="wrapper">
+
+                    <article class="col2 pad_left1">
+                        <div class="pad">
+                            <div class="wrapper">
+
+
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="under2"></div>
+                <div class="footerlink">
+                    <p class="lf" style="font-size:15px;">Copyright &copy;  <a href="#">FIJI SCHOOL</a> - All Rights Reserved</p>
+
+                </div>
+            </footer>
+            </div>
+        </html>
+

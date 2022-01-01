@@ -1,0 +1,730 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E9065E29-7A3B-4A07-85C4-8E6FCAED90CE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nadroga_Arya_College</RootNamespace>
+    <AssemblyName>Nadroga Arya College</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44346</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\adminlogin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\login.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mst_question.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mst_subject.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mst_test.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mst_user.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\new.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pintest.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\question.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\regcode.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\studentreg.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\suggest.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\timer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminLibrary\default.css" />
+    <Content Include="AdminLibrary\generic.css" />
+    <Content Include="AdminLibrary\logincss\animate.css" />
+    <Content Include="AdminLibrary\logincss\bootstrap.css" />
+    <Content Include="AdminLibrary\logincss\custom.css" />
+    <Content Include="AdminLibrary\logincss\export.css" />
+    <Content Include="AdminLibrary\logincss\font-awesome.css" />
+    <Content Include="AdminLibrary\logincss\graph.css" />
+    <Content Include="AdminLibrary\logincss\jqcandlestick.css" />
+    <Content Include="AdminLibrary\logincss\monthly.css" />
+    <Content Include="AdminLibrary\logincss\owl.carousel.css" />
+    <Content Include="AdminLibrary\logincss\SidebarNav.min.css" />
+    <Content Include="AdminLibrary\logincss\style.css" />
+    <Content Include="AdminLibrary\loginfonts\fontawesome-webfont.svg" />
+    <Content Include="AdminLibrary\loginimages\1.jpg" />
+    <Content Include="AdminLibrary\loginimages\2.jpg" />
+    <Content Include="AdminLibrary\loginimages\3.jpg" />
+    <Content Include="AdminLibrary\loginimages\4.jpg" />
+    <Content Include="AdminLibrary\loginimages\a.png" />
+    <Content Include="AdminLibrary\loginimages\i1.png" />
+    <Content Include="AdminLibrary\loginimages\i2.png" />
+    <Content Include="AdminLibrary\loginimages\i3.png" />
+    <Content Include="AdminLibrary\loginimages\i4.png" />
+    <Content Include="AdminLibrary\loginimages\img-sprite.png" />
+    <Content Include="AdminLibrary\loginimages\img1.png" />
+    <Content Include="AdminLibrary\loginimages\lock.png" />
+    <Content Include="AdminLibrary\loginimages\mail.png" />
+    <Content Include="AdminLibrary\loginimages\search-icon.png" />
+    <Content Include="AdminLibrary\loginimages\slider1.jpg" />
+    <Content Include="AdminLibrary\loginimages\slider2.jpg" />
+    <Content Include="AdminLibrary\loginimages\slider3.jpg" />
+    <Content Include="AdminLibrary\loginimages\slider4.jpg" />
+    <Content Include="AdminLibrary\loginimages\slider5.jpg" />
+    <Content Include="AdminLibrary\loginimages\slider6.jpg" />
+    <Content Include="AdminLibrary\loginimages\slider7.jpg" />
+    <Content Include="AdminLibrary\loginimages\tick.png" />
+    <Content Include="AdminLibrary\loginimages\user.png" />
+    <Content Include="AdminLibrary\loginimages\weather.jpg" />
+    <Content Include="AdminLibrary\loginjs\amcharts.js" />
+    <Content Include="AdminLibrary\loginjs\bootstrap.js" />
+    <Content Include="AdminLibrary\loginjs\Chart.bundle.js" />
+    <Content Include="AdminLibrary\loginjs\Chart.js" />
+    <Content Include="AdminLibrary\loginjs\Chart.min.js" />
+    <Content Include="AdminLibrary\loginjs\chartinator.js" />
+    <Content Include="AdminLibrary\loginjs\classie.js" />
+    <Content Include="AdminLibrary\loginjs\custom.js" />
+    <Content Include="AdminLibrary\loginjs\export.min.js" />
+    <Content Include="AdminLibrary\loginjs\images\dragIconRoundBig.svg" />
+    <Content Include="AdminLibrary\loginjs\images\lens.svg" />
+    <Content Include="AdminLibrary\loginjs\index.js" />
+    <Content Include="AdminLibrary\loginjs\index1.js" />
+    <Content Include="AdminLibrary\loginjs\index2.js" />
+    <Content Include="AdminLibrary\loginjs\jquery-1.11.1.min.js" />
+    <Content Include="AdminLibrary\loginjs\jquery.flot.js" />
+    <Content Include="AdminLibrary\loginjs\jquery.jqcandlestick.min.js" />
+    <Content Include="AdminLibrary\loginjs\jquery.nicescroll.js" />
+    <Content Include="AdminLibrary\loginjs\light.js" />
+    <Content Include="AdminLibrary\loginjs\metisMenu.min.js" />
+    <Content Include="AdminLibrary\loginjs\modernizr.custom.js" />
+    <Content Include="AdminLibrary\loginjs\monthly.js" />
+    <Content Include="AdminLibrary\loginjs\owl.carousel.js" />
+    <Content Include="AdminLibrary\loginjs\pie-chart.js" />
+    <Content Include="AdminLibrary\loginjs\scripts.js" />
+    <Content Include="AdminLibrary\loginjs\serial.js" />
+    <Content Include="AdminLibrary\loginjs\SidebarNav.min.js" />
+    <Content Include="AdminLibrary\loginjs\SimpleChart.js" />
+    <Content Include="AdminLibrary\loginjs\utils.js" />
+    <Content Include="AdminLibrary\loginjs\validator.min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="AdminLibrary\css\bootstrap-progressbar.css" />
+    <Content Include="AdminLibrary\css\bootstrap-responsive.css" />
+    <Content Include="AdminLibrary\css\bootstrap.css" />
+    <Content Include="AdminLibrary\css\datePicker.css" />
+    <Content Include="AdminLibrary\css\docs.css" />
+    <Content Include="AdminLibrary\css\DT_bootstrap.css" />
+    <Content Include="AdminLibrary\css\font-awesome-ie7.min.css" />
+    <Content Include="AdminLibrary\css\font-awesome.css" />
+    <Content Include="AdminLibrary\css\font-awesome.min.css" />
+    <Content Include="AdminLibrary\css\jumbotron.css" />
+    <Content Include="AdminLibrary\css\print.css" />
+    <Content Include="AdminLibrary\images\ad468x60.jpg" />
+    <Content Include="AdminLibrary\images\img1.gif" />
+    <Content Include="AdminLibrary\images\img2.gif" />
+    <Content Include="AdminLibrary\images\img3.gif" />
+    <Content Include="AdminLibrary\images\img4.gif" />
+    <Content Include="AdminLibrary\images\img5.gif" />
+    <Content Include="AdminLibrary\images\img6.gif" />
+    <Content Include="AdminLibrary\images\img7.gif" />
+    <Content Include="AdminLibrary\images\img8.jpg" />
+    <Content Include="AdminLibrary\js\application.js" />
+    <Content Include="AdminLibrary\js\bootstrap-affix.js" />
+    <Content Include="AdminLibrary\js\bootstrap-alert.js" />
+    <Content Include="AdminLibrary\js\bootstrap-button.js" />
+    <Content Include="AdminLibrary\js\bootstrap-carousel.js" />
+    <Content Include="AdminLibrary\js\bootstrap-collapse.js" />
+    <Content Include="AdminLibrary\js\bootstrap-dropdown.js" />
+    <Content Include="AdminLibrary\js\bootstrap-modal.js" />
+    <Content Include="AdminLibrary\js\bootstrap-popover.js" />
+    <Content Include="AdminLibrary\js\bootstrap-progressbar.js" />
+    <Content Include="AdminLibrary\js\bootstrap-scrollspy.js" />
+    <Content Include="AdminLibrary\js\bootstrap-tab.js" />
+    <Content Include="AdminLibrary\js\bootstrap-tooltip.js" />
+    <Content Include="AdminLibrary\js\bootstrap-transition.js" />
+    <Content Include="AdminLibrary\js\bootstrap-typeahead.js" />
+    <Content Include="AdminLibrary\js\bootstrap.js" />
+    <Content Include="AdminLibrary\js\bootstrap.min.js" />
+    <Content Include="AdminLibrary\js\bootstrap.min.tmp.js" />
+    <Content Include="AdminLibrary\js\DT_bootstrap.js" />
+    <Content Include="AdminLibrary\js\google-code-prettify\prettify.css" />
+    <Content Include="AdminLibrary\js\google-code-prettify\prettify.js" />
+    <Content Include="AdminLibrary\js\jquery.dataTables.js" />
+    <Content Include="AdminLibrary\js\jquery.datePicker.js" />
+    <Content Include="AdminLibrary\js\jquery.js" />
+    <Content Include="AdminLibrary\themes\1\bullet.png" />
+    <Content Include="AdminLibrary\themes\1\js-image-slider.css" />
+    <Content Include="AdminLibrary\themes\1\js-image-slider.js" />
+    <Content Include="AdminLibrary\themes\1\loading.gif" />
+    <Content Include="AdminLibrary\themes\2\js-image-slider.css" />
+    <Content Include="AdminLibrary\themes\2\js-image-slider.js" />
+    <Content Include="AdminLibrary\themes\2\loading.gif" />
+    <Content Include="AdminLibrary\themes\3\active-bg.png" />
+    <Content Include="AdminLibrary\themes\3\js-image-slider.css" />
+    <Content Include="AdminLibrary\themes\3\js-image-slider.js" />
+    <Content Include="AdminLibrary\themes\3\loading.gif" />
+    <Content Include="AdminLibrary\themes\3\thumbs-bar.gif" />
+    <Content Include="AdminLibrary\themes\4\active-bg.png" />
+    <Content Include="AdminLibrary\themes\4\bullet.png" />
+    <Content Include="AdminLibrary\themes\4\js-image-slider.css" />
+    <Content Include="AdminLibrary\themes\4\js-image-slider.js" />
+    <Content Include="AdminLibrary\themes\4\loading.gif" />
+    <Content Include="AdminLibrary\themes\4\navbuttons.gif" />
+    <Content Include="AdminLibrary\themes\4\navbuttons2.gif" />
+    <Content Include="AdminLibrary\themes\4\thumbs-bar.gif" />
+    <Content Include="AdminLibrary\themes\5\js-image-slider.css" />
+    <Content Include="AdminLibrary\themes\5\js-image-slider.js" />
+    <Content Include="AdminLibrary\themes\5\loading.gif" />
+    <Content Include="AdminLibrary\themes\6\bullet.png" />
+    <Content Include="AdminLibrary\themes\6\js-image-slider.css" />
+    <Content Include="AdminLibrary\themes\6\js-image-slider.js" />
+    <Content Include="AdminLibrary\themes\6\loading.gif" />
+    <Content Include="AdminLibrary\themes\6\mcVideoPlugin.js" />
+    <Content Include="AdminLibrary\themes\6\video.png" />
+    <Content Include="AdminLibrary\themes\7\js-image-slider.css" />
+    <Content Include="AdminLibrary\themes\7\js-image-slider.js" />
+    <Content Include="AdminLibrary\themes\7\loading.gif" />
+    <Content Include="AdminLibrary\themes\8\js-image-slider.css" />
+    <Content Include="AdminLibrary\themes\8\js-image-slider.js" />
+    <Content Include="AdminLibrary\themes\8\loading.gif" />
+    <Content Include="AdminLibrary\themes\8\tooltip.css" />
+    <Content Include="AdminLibrary\themes\8\tooltip.js" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="RegistrationLib\css1\layout.css" />
+    <Content Include="RegistrationLib\css1\reset.css" />
+    <Content Include="RegistrationLib\css1\style.css" />
+    <Content Include="RegistrationLib\images\bg_img.png" />
+    <Content Include="RegistrationLib\images\bg_img2.png" />
+    <Content Include="RegistrationLib\images\bg_top.jpg" />
+    <Content Include="RegistrationLib\images\box1_bg.gif" />
+    <Content Include="RegistrationLib\images\box1_bot_bg.gif" />
+    <Content Include="RegistrationLib\images\box1_bot_left.gif" />
+    <Content Include="RegistrationLib\images\box1_bot_right.gif" />
+    <Content Include="RegistrationLib\images\box1_out_bg.png" />
+    <Content Include="RegistrationLib\images\button1_bg.gif" />
+    <Content Include="RegistrationLib\images\button1_left.jpg" />
+    <Content Include="RegistrationLib\images\button1_right.jpg" />
+    <Content Include="RegistrationLib\images\button2_bg.gif" />
+    <Content Include="RegistrationLib\images\button2_left.jpg" />
+    <Content Include="RegistrationLib\images\button2_right.jpg" />
+    <Content Include="RegistrationLib\images\button3_bg.gif" />
+    <Content Include="RegistrationLib\images\button3_left.jpg" />
+    <Content Include="RegistrationLib\images\button3_right.jpg" />
+    <Content Include="RegistrationLib\images\icon1.jpg" />
+    <Content Include="RegistrationLib\images\icon2.jpg" />
+    <Content Include="RegistrationLib\images\icon3.jpg" />
+    <Content Include="RegistrationLib\images\img1.png" />
+    <Content Include="RegistrationLib\images\img2.png" />
+    <Content Include="RegistrationLib\images\img3.png" />
+    <Content Include="RegistrationLib\images\input_bg.gif" />
+    <Content Include="RegistrationLib\images\line_hor1.gif" />
+    <Content Include="RegistrationLib\images\marker_1.gif" />
+    <Content Include="RegistrationLib\images\menu_bg.gif" />
+    <Content Include="RegistrationLib\images\menu_line.gif" />
+    <Content Include="RegistrationLib\images\page1_img1.jpg" />
+    <Content Include="RegistrationLib\images\page1_img2.jpg" />
+    <Content Include="RegistrationLib\images\page1_img3.jpg" />
+    <Content Include="RegistrationLib\images\page2_img1.jpg" />
+    <Content Include="RegistrationLib\images\page2_img2.jpg" />
+    <Content Include="RegistrationLib\images\page2_img3.jpg" />
+    <Content Include="RegistrationLib\images\page2_img4.jpg" />
+    <Content Include="RegistrationLib\images\page3_img1.jpg" />
+    <Content Include="RegistrationLib\images\page3_img2.jpg" />
+    <Content Include="RegistrationLib\images\page3_img3.jpg" />
+    <Content Include="RegistrationLib\images\page4_img1.jpg" />
+    <Content Include="RegistrationLib\images\textarea_bg.gif" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="AdminLibrary\js\README.md" />
+    <Content Include="AdminLibrary\loginfonts\fontawesome-webfont.eot" />
+    <Content Include="AdminLibrary\loginfonts\fontawesome-webfont.ttf" />
+    <Content Include="AdminLibrary\loginfonts\fontawesome-webfont.woff" />
+    <Content Include="AdminLibrary\loginfonts\fontawesome-webfont.woff2" />
+    <Content Include="AdminLibrary\loginfonts\FontAwesome.otf" />
+    <Content Include="AdminLibrary\loginfonts\glyphicons-halflings-regular.eot" />
+    <Content Include="AdminLibrary\loginfonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="AdminLibrary\loginfonts\glyphicons-halflings-regular.woff" />
+    <Content Include="AdminLibrary\loginfonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="StudentRegLibrary\css1\layout.css" />
+    <Content Include="StudentRegLibrary\css1\reset.css" />
+    <Content Include="StudentRegLibrary\css1\style.css" />
+    <Content Include="StudentRegLibrary\images\bg_img.png" />
+    <Content Include="StudentRegLibrary\images\bg_img2.png" />
+    <Content Include="StudentRegLibrary\images\bg_top.jpg" />
+    <Content Include="StudentRegLibrary\images\box1_bg.gif" />
+    <Content Include="StudentRegLibrary\images\box1_bot_bg.gif" />
+    <Content Include="StudentRegLibrary\images\box1_bot_left.gif" />
+    <Content Include="StudentRegLibrary\images\box1_bot_right.gif" />
+    <Content Include="StudentRegLibrary\images\box1_out_bg.png" />
+    <Content Include="StudentRegLibrary\images\button1_bg.gif" />
+    <Content Include="StudentRegLibrary\images\button1_left.jpg" />
+    <Content Include="StudentRegLibrary\images\button1_right.jpg" />
+    <Content Include="StudentRegLibrary\images\button2_bg.gif" />
+    <Content Include="StudentRegLibrary\images\button2_left.jpg" />
+    <Content Include="StudentRegLibrary\images\button2_right.jpg" />
+    <Content Include="StudentRegLibrary\images\button3_bg.gif" />
+    <Content Include="StudentRegLibrary\images\button3_left.jpg" />
+    <Content Include="StudentRegLibrary\images\button3_right.jpg" />
+    <Content Include="StudentRegLibrary\images\icon1.jpg" />
+    <Content Include="StudentRegLibrary\images\icon2.jpg" />
+    <Content Include="StudentRegLibrary\images\icon3.jpg" />
+    <Content Include="StudentRegLibrary\images\img1.png" />
+    <Content Include="StudentRegLibrary\images\img2.png" />
+    <Content Include="StudentRegLibrary\images\img3.png" />
+    <Content Include="StudentRegLibrary\images\input_bg.gif" />
+    <Content Include="StudentRegLibrary\images\line_hor1.gif" />
+    <Content Include="StudentRegLibrary\images\marker_1.gif" />
+    <Content Include="StudentRegLibrary\images\menu_bg.gif" />
+    <Content Include="StudentRegLibrary\images\menu_line.gif" />
+    <Content Include="StudentRegLibrary\images\page1_img1.jpg" />
+    <Content Include="StudentRegLibrary\images\page1_img2.jpg" />
+    <Content Include="StudentRegLibrary\images\page1_img3.jpg" />
+    <Content Include="StudentRegLibrary\images\page2_img1.jpg" />
+    <Content Include="StudentRegLibrary\images\page2_img2.jpg" />
+    <Content Include="StudentRegLibrary\images\page2_img3.jpg" />
+    <Content Include="StudentRegLibrary\images\page2_img4.jpg" />
+    <Content Include="StudentRegLibrary\images\page3_img1.jpg" />
+    <Content Include="StudentRegLibrary\images\page3_img2.jpg" />
+    <Content Include="StudentRegLibrary\images\page3_img3.jpg" />
+    <Content Include="StudentRegLibrary\images\page4_img1.jpg" />
+    <Content Include="StudentRegLibrary\images\textarea_bg.gif" />
+    <Content Include="UserLibrary\700e4e7a-a4b2-4b1f-916a-23333273c5f9.jfif" />
+    <Content Include="UserLibrary\700e4e7a-a4b2-4b1f-916a-23333273c5f9.png" />
+    <Content Include="UserLibrary\BOOKPG.JPG" />
+    <Content Include="UserLibrary\css1\layout.css" />
+    <Content Include="UserLibrary\css1\reset.css" />
+    <Content Include="UserLibrary\css1\style.css" />
+    <Content Include="UserLibrary\css\bootstrap-progressbar.css" />
+    <Content Include="UserLibrary\css\bootstrap-responsive.css" />
+    <Content Include="UserLibrary\css\bootstrap.css" />
+    <Content Include="UserLibrary\css\DT_bootstrap.css" />
+    <Content Include="UserLibrary\css\font-awesome-ie7.min.css" />
+    <Content Include="UserLibrary\css\font-awesome.css" />
+    <Content Include="UserLibrary\css\font-awesome.min.css" />
+    <Content Include="UserLibrary\css\jumbotron.css" />
+    <Content Include="UserLibrary\css\st.css" />
+    <Content Include="UserLibrary\css\style1.css" />
+    <Content Include="UserLibrary\dear_diary.jpg" />
+    <Content Include="UserLibrary\generic.css" />
+    <Content Include="UserLibrary\header.jpg" />
+    <Content Include="UserLibrary\images\bg01.jpg" />
+    <Content Include="UserLibrary\images\bg02.jpg" />
+    <Content Include="UserLibrary\images\bg03.jpg" />
+    <Content Include="UserLibrary\images\bg04.jpg" />
+    <Content Include="UserLibrary\images\bg05.jpg" />
+    <Content Include="UserLibrary\images\bg06.jpg" />
+    <Content Include="UserLibrary\images\bg_img.png" />
+    <Content Include="UserLibrary\images\bg_img2.png" />
+    <Content Include="UserLibrary\images\bg_menu.gif" />
+    <Content Include="UserLibrary\images\bg_submenu.gif" />
+    <Content Include="UserLibrary\images\boby.jpg" />
+    <Content Include="UserLibrary\images\header_images.jpg" />
+    <Content Include="UserLibrary\images\home_1.jpg" />
+    <Content Include="UserLibrary\images\home_2.jpg" />
+    <Content Include="UserLibrary\images\img01.jpg" />
+    <Content Include="UserLibrary\images\img02.gif" />
+    <Content Include="UserLibrary\images\img03.gif" />
+    <Content Include="UserLibrary\images\img04.gif" />
+    <Content Include="UserLibrary\images\img05.gif" />
+    <Content Include="UserLibrary\images\img06.jpg" />
+    <Content Include="UserLibrary\images\img07.gif" />
+    <Content Include="UserLibrary\images\img08.gif" />
+    <Content Include="UserLibrary\images\style.css" />
+    <Content Include="UserLibrary\images\tie_logo.gif" />
+    <Content Include="UserLibrary\imag\1.jpg" />
+    <Content Include="UserLibrary\imag\blackbar.jpg" />
+    <Content Include="UserLibrary\imag\BOOKPG.JPG" />
+    <Content Include="UserLibrary\imag\bottombar.jpg" />
+    <Content Include="UserLibrary\imag\DEGREE.JPG" />
+    <Content Include="UserLibrary\imag\fence.swf" />
+    <Content Include="UserLibrary\imag\fence.txt" />
+    <Content Include="UserLibrary\imag\HLPBUTT2.JPG" />
+    <Content Include="UserLibrary\imag\login.jpg" />
+    <Content Include="UserLibrary\imag\paathshala.jpg" />
+    <Content Include="UserLibrary\imag\topbkg.jpg" />
+    <Content Include="UserLibrary\imag\topright.jpg" />
+    <Content Include="UserLibrary\js1\application.js" />
+    <Content Include="UserLibrary\js1\jquery.js" />
+    <Content Include="UserLibrary\js1\swfobject\expressInstall.swf" />
+    <Content Include="UserLibrary\js\arial.js" />
+    <Content Include="UserLibrary\js\cufon-yui.js" />
+    <Content Include="UserLibrary\js\cuf_run.js" />
+    <Content Include="UserLibrary\js\jquery-1.3.2.min.js" />
+    <Content Include="UserLibrary\js\jquery-1.8.3.min.js" />
+    <Content Include="UserLibrary\js\jquery.easing.min.js" />
+    <Content Include="UserLibrary\js\jquery.min.js" />
+    <Content Include="UserLibrary\js\jquery.nivo.slider.pack.js" />
+    <Content Include="UserLibrary\js\script.js" />
+    <Content Include="UserLibrary\j\application.js" />
+    <Content Include="UserLibrary\j\bootstrap-affix.js" />
+    <Content Include="UserLibrary\j\bootstrap-alert.js" />
+    <Content Include="UserLibrary\j\bootstrap-button.js" />
+    <Content Include="UserLibrary\j\bootstrap-carousel.js" />
+    <Content Include="UserLibrary\j\bootstrap-collapse.js" />
+    <Content Include="UserLibrary\j\bootstrap-dropdown.js" />
+    <Content Include="UserLibrary\j\bootstrap-modal.js" />
+    <Content Include="UserLibrary\j\bootstrap-popover.js" />
+    <Content Include="UserLibrary\j\bootstrap-progressbar.js" />
+    <Content Include="UserLibrary\j\bootstrap-scrollspy.js" />
+    <Content Include="UserLibrary\j\bootstrap-tab.js" />
+    <Content Include="UserLibrary\j\bootstrap-tooltip.js" />
+    <Content Include="UserLibrary\j\bootstrap-transition.js" />
+    <Content Include="UserLibrary\j\bootstrap-typeahead.js" />
+    <Content Include="UserLibrary\j\bootstrap.js" />
+    <Content Include="UserLibrary\j\bootstrap.min.js" />
+    <Content Include="UserLibrary\j\bootstrap.min.tmp.js" />
+    <Content Include="UserLibrary\j\DT_bootstrap.js" />
+    <Content Include="UserLibrary\j\google-code-prettify\prettify.css" />
+    <Content Include="UserLibrary\j\google-code-prettify\prettify.js" />
+    <Content Include="UserLibrary\j\jquery.dataTables.js" />
+    <Content Include="UserLibrary\j\jquery.datePicker.js" />
+    <Content Include="UserLibrary\j\jquery.js" />
+    <Content Include="UserLibrary\lib\jquery.js" />
+    <Content Include="UserLibrary\login.jpg" />
+    <Content Include="UserLibrary\paathshala.jpg" />
+    <Content Include="UserLibrary\quiz.css" />
+    <Content Include="UserLibrary\rugipo.png" />
+    <Content Include="UserLibrary\src\ban2.png" />
+    <Content Include="UserLibrary\src\closelabel.png" />
+    <Content Include="UserLibrary\src\facebox.css" />
+    <Content Include="UserLibrary\src\facebox.js" />
+    <Content Include="UserLibrary\src\loading.gif" />
+    <Content Include="UserLibrary\student_pic\1.jpg" />
+    <Content Include="UserLibrary\student_pic\2.jpg" />
+    <Content Include="UserLibrary\student_pic\3.jpg" />
+    <Content Include="UserLibrary\student_pic\4.jpg" />
+    <Content Include="UserLibrary\student_pic\6.jpg" />
+    <Content Include="UserLibrary\student_pic\7.jpg" />
+    <Content Include="UserLibrary\student_pic\9.jpg" />
+    <Content Include="UserLibrary\student_pic\AB2.GIF" />
+    <Content Include="UserLibrary\student_pic\CENCES Background.jpg" />
+    <Content Include="UserLibrary\student_pic\Desert.jpg" />
+    <Content Include="UserLibrary\student_pic\Election 2k10.jpg" />
+    <Content Include="UserLibrary\student_pic\Hydrangeas.jpg" />
+    <Content Include="UserLibrary\student_pic\Jellyfish.jpg" />
+    <Content Include="UserLibrary\student_pic\Koala.jpg" />
+    <Content Include="UserLibrary\student_pic\Lighthouse.jpg" />
+    <Content Include="UserLibrary\student_pic\Penguins.jpg" />
+    <Content Include="UserLibrary\student_pic\templatemo_image_01.jpg" />
+    <Content Include="UserLibrary\student_pic\templatemo_image_02.jpg" />
+    <Content Include="UserLibrary\student_pic\Tulips.jpg" />
+    <Content Include="UserLibrary\style.css" />
+    <Content Include="UserLibrary\style1.css" />
+    <Content Include="UserLibrary\styselect.css" />
+    <Content Include="UserLibrary\themes\1\bullet.png" />
+    <Content Include="UserLibrary\themes\1\js-image-slider.css" />
+    <Content Include="UserLibrary\themes\1\js-image-slider.js" />
+    <Content Include="UserLibrary\themes\1\loading.gif" />
+    <Content Include="UserLibrary\themes\2\js-image-slider.css" />
+    <Content Include="UserLibrary\themes\2\js-image-slider.js" />
+    <Content Include="UserLibrary\themes\2\loading.gif" />
+    <Content Include="UserLibrary\themes\3\active-bg.png" />
+    <Content Include="UserLibrary\themes\3\js-image-slider.css" />
+    <Content Include="UserLibrary\themes\3\js-image-slider.js" />
+    <Content Include="UserLibrary\themes\3\loading.gif" />
+    <Content Include="UserLibrary\themes\3\thumbs-bar.gif" />
+    <Content Include="UserLibrary\themes\4\active-bg.png" />
+    <Content Include="UserLibrary\themes\4\bullet.png" />
+    <Content Include="UserLibrary\themes\4\js-image-slider.css" />
+    <Content Include="UserLibrary\themes\4\js-image-slider.js" />
+    <Content Include="UserLibrary\themes\4\loading.gif" />
+    <Content Include="UserLibrary\themes\4\navbuttons.gif" />
+    <Content Include="UserLibrary\themes\4\navbuttons2.gif" />
+    <Content Include="UserLibrary\themes\4\thumbs-bar.gif" />
+    <Content Include="UserLibrary\themes\5\js-image-slider.css" />
+    <Content Include="UserLibrary\themes\5\js-image-slider.js" />
+    <Content Include="UserLibrary\themes\5\loading.gif" />
+    <Content Include="UserLibrary\themes\6\bullet.png" />
+    <Content Include="UserLibrary\themes\6\js-image-slider.css" />
+    <Content Include="UserLibrary\themes\6\js-image-slider.js" />
+    <Content Include="UserLibrary\themes\6\loading.gif" />
+    <Content Include="UserLibrary\themes\6\mcVideoPlugin.js" />
+    <Content Include="UserLibrary\themes\6\video.png" />
+    <Content Include="UserLibrary\themes\7\js-image-slider.css" />
+    <Content Include="UserLibrary\themes\7\js-image-slider.js" />
+    <Content Include="UserLibrary\themes\7\loading.gif" />
+    <Content Include="UserLibrary\themes\8\js-image-slider.css" />
+    <Content Include="UserLibrary\themes\8\js-image-slider.js" />
+    <Content Include="UserLibrary\themes\8\loading.gif" />
+    <Content Include="UserLibrary\themes\8\tooltip.css" />
+    <Content Include="UserLibrary\themes\8\tooltip.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="UserLibrary\imag\Thumbs.db" />
+    <Content Include="UserLibrary\j\README.md" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Register.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\adquest.cshtml" />
+    <Content Include="Views\Admin\Confirm.cshtml" />
+    <Content Include="Views\Admin\Generator.cshtml" />
+    <Content Include="Views\Admin\pinList.cshtml" />
+    <Content Include="Views\Admin\questionAdd.cshtml" />
+    <Content Include="Views\Admin\subAdd.cshtml" />
+    <Content Include="Views\Admin\testAdd.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Checker.cshtml" />
+    <Content Include="Views\User\Contact.cshtml" />
+    <Content Include="Views\User\Quiz.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\User\RegConfirm.cshtml" />
+    <Content Include="Views\User\Squestion.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61737</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44346/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

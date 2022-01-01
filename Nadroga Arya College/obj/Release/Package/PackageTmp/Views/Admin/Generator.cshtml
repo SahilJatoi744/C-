@@ -1,0 +1,99 @@
+﻿@model Nadroga_Arya_College.Models.regcode
+@{
+    ViewBag.Title = "Generator";
+}
+
+<h2>Generator</h2>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Administrative Page</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="~/AdminLibrary/default.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        table tr td a {
+            text-decoration: none;
+        }
+
+            table tr td a:hover {
+                text-decoration: underline;
+                color: blue;
+            }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">
+            <h1><a href="#" style="font-family:impact; font-size:27px;">2021/2022 EXAM</a></h1>
+            <h2><a href="#" style="font-size:13px;">Nadroga Arya COLLEGE</a></h2>
+        </div>
+        <div id="menu">
+            <ul>
+                <li class="first"><a style="font-size:15px; color:blue;" href="@Url.Action("Index","Admin")" title=""><---Back</a></li>
+            </ul>
+        </div>
+        <div id="ad468x60"><a href="#"><img src="~/AdminLibrary/images/ad468x60.jpg" alt="" width="468" height="60" /></a></div>
+    </div>
+    <div id="page">
+        <div id="content">
+            <div class="boxed" style="font-size:20px;">
+                <h1 class="heading" style="font-size:18px;">Welcome...You are....<span style="color:red;">Admin</span></h1>
+
+
+
+                <SCRIPT LANGUAGE="JavaScript">
+function check() {
+mt=document.form1.subname.value;
+if (mt.length<1) {
+alert("Please Enter Subject Name");
+document.form1.subname.focus();
+return false;
+}
+return true;
+}
+                </SCRIPT>
+
+                <div style="margin:auto;width:90%;height:190px;box-shadow:3px 3px 3px 6px #CCCCCC;text-align:left; margin-top:10px;">
+                    <br>
+                    <center>
+                        @using (Html.BeginForm("Generator", "Admin", FormMethod.Post))
+                        {
+                            <label>Code</label>
+                            @Html.TextBoxFor(a => a.code, new { type = "integer", placeholder = "Code", required = "required" })
+                            <br />
+                            <label>Status</label>
+                            @Html.TextBoxFor(a => a.status, new { type = "text", placeholder = "Status", required = "required" })
+                            <input type="submit" value="Genrate" class="btn btn-success" />
+                        }
+                        </center>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+        <!-- end #content -->
+        <div id="sidebar">
+            <div class="boxed">
+                <h2 class="heading" style="font-size:15px;">ADMINISTRATIVE SECTION</h2>
+                <div class="content" style="font-size:18px;">
+                    You are...<span style="color:black; font-weight:bold;">Admin</span>
+                </div>
+            </div>
+        </div>
+        <!-- end #sidebar -->
+    </div>
+    <!-- end #page -->
+    <div style="clear: both;">&nbsp;</div>
+    <div id="footer">
+        <p id="legal" style="font-size:16px;">Copyright &copy;Nadroga Arya COLLEGE  Designed by <a href="http://www.freecsstemplates.org/">NADROGA ARYA COLLEGE ICT TEAM</a> <span style="color:white;">9999808</span>.</p>
+        <p id="links" style="font-size:16px;"><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </div>
+</body>
+</html>

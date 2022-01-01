@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NADROGA_ARYA_COLLEGEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="adminlogin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sex" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="regno" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="photo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'NADROGA_ARYA_COLLEGE.dbo.mst_admin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="mst_admin">
+          <Property Name="loginid" Type="varchar" MaxLength="20" />
+          <Property Name="pass" Type="varchar" MaxLength="20" />
+        </EntityType>-->
+        <EntityType Name="mst_question">
+          <Key>
+            <PropertyRef Name="que_id" />
+          </Key>
+          <Property Name="que_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="test_id" Type="int" />
+          <Property Name="que_desc" Type="varchar" MaxLength="150" />
+          <Property Name="ans1" Type="varchar" MaxLength="75" />
+          <Property Name="ans2" Type="varchar" MaxLength="75" />
+          <Property Name="ans3" Type="varchar" MaxLength="75" />
+          <Property Name="ans4" Type="varchar" MaxLength="75" />
+          <Property Name="true_ans" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'NADROGA_ARYA_COLLEGE.dbo.mst_result' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="mst_result">
+          <Property Name="login" Type="varchar" MaxLength="200" />
+          <Property Name="test_id" Type="int" />
+          <Property Name="test_date" Type="date" />
+          <Property Name="score" Type="int" />
+        </EntityType>-->
+        <EntityType Name="mst_subject">
+          <Key>
+            <PropertyRef Name="sub_id" />
+          </Key>
+          <Property Name="sub_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sub_name" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="mst_test">
+          <Key>
+            <PropertyRef Name="test_id" />
+          </Key>
+          <Property Name="test_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sub_id" Type="int" />
+          <Property Name="test_name" Type="varchar" MaxLength="30" />
+          <Property Name="total_que" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="mst_user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="login" Type="varchar" MaxLength="200" />
+          <Property Name="pass" Type="varchar" MaxLength="200" />
+          <Property Name="username" Type="varchar" MaxLength="200" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="150" />
+          <Property Name="phone" Type="int" />
+          <Property Name="email" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'NADROGA_ARYA_COLLEGE.dbo.mst_useranswer' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="mst_useranswer">
+          <Property Name="sess_id" Type="varchar" MaxLength="80" />
+          <Property Name="test_id" Type="int" />
+          <Property Name="que_des" Type="varchar" MaxLength="200" />
+          <Property Name="ans1" Type="varchar" MaxLength="50" />
+          <Property Name="ans2" Type="varchar" MaxLength="50" />
+          <Property Name="ans3" Type="varchar" MaxLength="50" />
+          <Property Name="ans4" Type="varchar" MaxLength="50" />
+          <Property Name="true_ans" Type="int" />
+          <Property Name="your_ans" Type="int" />
+        </EntityType>-->
+        <EntityType Name="new">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="quote" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="by_" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pintest">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pin" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="question">
+          <Key>
+            <PropertyRef Name="que_id" />
+          </Key>
+          <Property Name="que_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="test_id" Type="int" Nullable="false" />
+          <Property Name="que_desc" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="studentid" Type="int" Nullable="false" />
+          <Property Name="ans1" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="ans2" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="ans3" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="ans4" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="true_ans" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="regcode">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="studentreg">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="surname" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="othernames" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="gender" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="religion" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="bday" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="LGA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nationality" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="school" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="faculty" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="course" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="level" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="jamb" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="sub1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="grade1" Type="int" Nullable="false" />
+          <Property Name="sub2" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="grade2" Type="int" Nullable="false" />
+          <Property Name="sub3" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="grade3" Type="int" Nullable="false" />
+          <Property Name="sub4" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="grade4" Type="int" Nullable="false" />
+          <Property Name="total" Type="int" Nullable="false" />
+          <Property Name="appno" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="time" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="examdate" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="photo" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="suggest">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Department" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Question" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="timer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="studentid" Type="int" Nullable="false" />
+          <Property Name="timer" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="NADROGA_ARYA_COLLEGEModelStoreContainer">
+          <EntitySet Name="adminlogin" EntityType="Self.adminlogin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mst_question" EntityType="Self.mst_question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mst_subject" EntityType="Self.mst_subject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mst_test" EntityType="Self.mst_test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mst_user" EntityType="Self.mst_user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="new" EntityType="Self.new" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pintest" EntityType="Self.pintest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="question" EntityType="Self.question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="regcode" EntityType="Self.regcode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="studentreg" EntityType="Self.studentreg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="suggest" EntityType="Self.suggest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="timer" EntityType="Self.timer" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NADROGA_ARYA_COLLEGEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="adminlogin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sex" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="regno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="photo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mst_question">
+          <Key>
+            <PropertyRef Name="que_id" />
+          </Key>
+          <Property Name="que_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="test_id" Type="Int32" />
+          <Property Name="que_desc" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ans1" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="ans2" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="ans3" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="ans4" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="true_ans" Type="Int32" />
+        </EntityType>
+        <EntityType Name="mst_subject">
+          <Key>
+            <PropertyRef Name="sub_id" />
+          </Key>
+          <Property Name="sub_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sub_name" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="mst_test">
+          <Key>
+            <PropertyRef Name="test_id" />
+          </Key>
+          <Property Name="test_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sub_id" Type="Int32" />
+          <Property Name="test_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="total_que" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="mst_user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="pass" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="new">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="quote" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="by_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pintest">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pin" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="question">
+          <Key>
+            <PropertyRef Name="que_id" />
+          </Key>
+          <Property Name="que_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="test_id" Type="Int32" Nullable="false" />
+          <Property Name="que_desc" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="studentid" Type="Int32" Nullable="false" />
+          <Property Name="ans1" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ans2" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ans3" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ans4" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="true_ans" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="regcode">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="studentreg">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="surname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="othernames" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="religion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bday" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="state" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LGA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nationality" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="school" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="faculty" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="course" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="jamb" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sub1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="grade1" Type="Int32" Nullable="false" />
+          <Property Name="sub2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="grade2" Type="Int32" Nullable="false" />
+          <Property Name="sub3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="grade3" Type="Int32" Nullable="false" />
+          <Property Name="sub4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="grade4" Type="Int32" Nullable="false" />
+          <Property Name="total" Type="Int32" Nullable="false" />
+          <Property Name="appno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="examdate" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="photo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="timer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="studentid" Type="Int32" Nullable="false" />
+          <Property Name="timer1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="NADROGA_ARYA_COLLEGEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="adminlogins" EntityType="Self.adminlogin" />
+          <EntitySet Name="logins" EntityType="Self.login" />
+          <EntitySet Name="mst_question" EntityType="Self.mst_question" />
+          <EntitySet Name="mst_subject" EntityType="Self.mst_subject" />
+          <EntitySet Name="mst_test" EntityType="Self.mst_test" />
+          <EntitySet Name="mst_user" EntityType="Self.mst_user" />
+          <EntitySet Name="news" EntityType="Self.new" />
+          <EntitySet Name="pintests" EntityType="Self.pintest" />
+          <EntitySet Name="questions" EntityType="Self.question" />
+          <EntitySet Name="regcodes" EntityType="Self.regcode" />
+          <EntitySet Name="studentregs" EntityType="Self.studentreg" />
+          <EntitySet Name="timers" EntityType="Self.timer" />
+          <EntitySet Name="suggests" EntityType="NADROGA_ARYA_COLLEGEModel.suggest" />
+        </EntityContainer>
+        <EntityType Name="suggest">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Department" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Question" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NADROGA_ARYA_COLLEGEModelStoreContainer" CdmEntityContainer="NADROGA_ARYA_COLLEGEEntities">
+          <EntitySetMapping Name="adminlogins">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.adminlogin">
+              <MappingFragment StoreEntitySet="adminlogin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logins">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="regno" ColumnName="regno" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mst_question">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.mst_question">
+              <MappingFragment StoreEntitySet="mst_question">
+                <ScalarProperty Name="que_id" ColumnName="que_id" />
+                <ScalarProperty Name="test_id" ColumnName="test_id" />
+                <ScalarProperty Name="que_desc" ColumnName="que_desc" />
+                <ScalarProperty Name="ans1" ColumnName="ans1" />
+                <ScalarProperty Name="ans2" ColumnName="ans2" />
+                <ScalarProperty Name="ans3" ColumnName="ans3" />
+                <ScalarProperty Name="ans4" ColumnName="ans4" />
+                <ScalarProperty Name="true_ans" ColumnName="true_ans" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mst_subject">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.mst_subject">
+              <MappingFragment StoreEntitySet="mst_subject">
+                <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+                <ScalarProperty Name="sub_name" ColumnName="sub_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mst_test">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.mst_test">
+              <MappingFragment StoreEntitySet="mst_test">
+                <ScalarProperty Name="test_id" ColumnName="test_id" />
+                <ScalarProperty Name="sub_id" ColumnName="sub_id" />
+                <ScalarProperty Name="test_name" ColumnName="test_name" />
+                <ScalarProperty Name="total_que" ColumnName="total_que" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mst_user">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.mst_user">
+              <MappingFragment StoreEntitySet="mst_user">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="news">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.new">
+              <MappingFragment StoreEntitySet="new">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="quote" ColumnName="quote" />
+                <ScalarProperty Name="by_" ColumnName="by_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pintests">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.pintest">
+              <MappingFragment StoreEntitySet="pintest">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pin" ColumnName="pin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="questions">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.question">
+              <MappingFragment StoreEntitySet="question">
+                <ScalarProperty Name="que_id" ColumnName="que_id" />
+                <ScalarProperty Name="test_id" ColumnName="test_id" />
+                <ScalarProperty Name="que_desc" ColumnName="que_desc" />
+                <ScalarProperty Name="studentid" ColumnName="studentid" />
+                <ScalarProperty Name="ans1" ColumnName="ans1" />
+                <ScalarProperty Name="ans2" ColumnName="ans2" />
+                <ScalarProperty Name="ans3" ColumnName="ans3" />
+                <ScalarProperty Name="ans4" ColumnName="ans4" />
+                <ScalarProperty Name="true_ans" ColumnName="true_ans" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="regcodes">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.regcode">
+              <MappingFragment StoreEntitySet="regcode">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="studentregs">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.studentreg">
+              <MappingFragment StoreEntitySet="studentreg">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="othernames" ColumnName="othernames" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="religion" ColumnName="religion" />
+                <ScalarProperty Name="bday" ColumnName="bday" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="LGA" ColumnName="LGA" />
+                <ScalarProperty Name="nationality" ColumnName="nationality" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="school" ColumnName="school" />
+                <ScalarProperty Name="faculty" ColumnName="faculty" />
+                <ScalarProperty Name="course" ColumnName="course" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="jamb" ColumnName="jamb" />
+                <ScalarProperty Name="sub1" ColumnName="sub1" />
+                <ScalarProperty Name="grade1" ColumnName="grade1" />
+                <ScalarProperty Name="sub2" ColumnName="sub2" />
+                <ScalarProperty Name="grade2" ColumnName="grade2" />
+                <ScalarProperty Name="sub3" ColumnName="sub3" />
+                <ScalarProperty Name="grade3" ColumnName="grade3" />
+                <ScalarProperty Name="sub4" ColumnName="sub4" />
+                <ScalarProperty Name="grade4" ColumnName="grade4" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="appno" ColumnName="appno" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="examdate" ColumnName="examdate" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="timers">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.timer">
+              <MappingFragment StoreEntitySet="timer">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="studentid" ColumnName="studentid" />
+                <ScalarProperty Name="timer1" ColumnName="timer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="suggests">
+            <EntityTypeMapping TypeName="NADROGA_ARYA_COLLEGEModel.suggest">
+              <MappingFragment StoreEntitySet="suggest">
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

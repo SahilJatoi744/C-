@@ -1,0 +1,90 @@
+﻿@model List<Nadroga_Arya_College.Models.studentreg>
+@{
+    ViewBag.Title = "Checker";
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Student Registration</title>
+    <style type="text/css">
+
+        table tr td a {
+            color: blue;
+            text-decoration: none;
+        }
+
+            table tr td a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+
+<body style="width:600px; margin:auto; height:auto; font-family:tahoma; font-size:11px">
+    <br /><br />
+    <table border="0px" width="100%">
+        <tr><td align="right"><img height="40px" width="30px" src="~/UserLibrary/700e4e7a-a4b2-4b1f-916a-23333273c5f9.png" /></td><td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rufus Giwa Polytechnic, Owo</b></td><td><a style="color:red" href="@Url.Action("Index","User")"><b>Back</b></a></td></tr>
+
+        <table border="0px" width="100%">
+            <br />
+            <tr>
+                <td width="100px"><img height="110px" width="95px" src="~/UserLibrary/700e4e7a-a4b2-4b1f-916a-23333273c5f9.png" /></td>
+                <td valign="top" style="padding:10px; font-size:14px; text-align:center">
+                    <b style="font-size:17px">RUFUS GIWA POLYTECHNIC, OWO</b><br />
+                    P.M.B 1019, OWO<br />
+                    <span style=" font-size:15px;">(DIRECTORATE OF ACADEMIC AFFAIRS)</span><BR />
+                    <b style="font-family:'Times New Roman', Times, serif;">IDENTITY CARD FOR Post UTME</b><br /><br />
+                    <span style="font-family:'Times New Roman', Times, serif; font-size:11px; font-style:italic;">You Secondary School Level is: </span> <b>9</b>
+
+                </td>
+
+            </tr>
+
+            <table style="text-align:center" border="1px" width="100%" cellpadding="5px" cellspacing="0px">
+                <tr>
+                    <th>Id</th>
+                    <th>Application No</th>
+                    <th>Surname</th>
+                    <th>Othername</th>
+                    <th>Gender</th>
+                    <th>Birthdate</th>
+                    <th>Email</th>
+                    <th>Nationality</th>
+                    <th>Course</th>
+                    <th>Jamb</th>
+                    <th>Level</th>
+                    <th>LGA</th>
+                    <th>Faculty</th>
+                    <th>Examdate</th>
+                    
+                </tr>
+                @foreach (var item in Model)
+                {<br/>
+            <tr>
+                <td>@item.id</td>
+                <td>@item.appno</td>
+                <td>@item.surname</td>
+                <td>@item.othernames</td>
+                <td>@item.gender</td>
+                <td>@item.address</td>
+                <td>@item.bday</td>
+                <td>@item.nationality</td>
+                <td>@item.course</td>
+                <td>@item.jamb</td>
+                <td>@item.level</td>
+                <td>@item.LGA</td>
+                <td>@item.faculty</td>
+                <td>@item.examdate</td>
+  </tr>
+                }
+            </table>
+        </table>
+        </table>
+
+
+
+
+</body>
+</html>
+
